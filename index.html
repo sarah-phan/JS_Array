@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="border border-success text-success container my-2 py-3">
+    <form>
+      <div class="form-group" style="display: inline;">
+        <input type="number" class="form-control mr-2 py-3" id="addNumber" placeholder="Nhập số n"
+          style="width: 30%; display: inline;">
+      </div>
+      <button type="button" id="btnArray" class="btn btn-info py-2 px-3" style="border-radius: 20px;"
+        onclick="arrayMain()">
+        Thêm số
+      </button>
+      <br>
+      <i class="fa fa-hand-point-right text-danger pt-3" style="font-size: 25px;"></i>
+      <span class="my-3 text-danger" id="txtArray" style="font-size: 20px;"></span>
+    </form>
+
+    <!-- Câu 1 -->
+    <div class="accordion mt-4" id="calcSum">
+      <div class="card">
+        <div class="card-header bg-dark" id="headingSum">
+          <h2 class="mb-0 ">
+            <button class="btn btn-block text-left text-light" type="button" data-toggle="collapse"
+              data-target="#collapseSum" aria-expanded="false" aria-controls="collapseSum">
+              1. Tính tổng số dương
+            </button>
+          </h2>
+        </div>
+        <div id="collapseSum" class="collapse" aria-labelledby="headingSum" data-parent="#calcSum">
+          <div class="card-body">
+            <button type="button" id="btnSum" class="btn btn-info py-2 px-3" style="border-radius: 20px;"
+              onclick="findSum()">
+              Tính tổng
+            </button>
+            <br>
+            <i class="fa fa-hand-point-right text-danger pt-3" style="font-size: 25px;"></i>
+            <span class="my-3 text-danger" id="txtSum" style="font-size: 20px;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Câu 2 -->
+    <div class="accordion" id="calcCount">
+      <div class="card">
+        <div class="card-header bg-dark" id="headingCount">
+          <h2 class="mb-0 ">
+            <button class="btn btn-block text-left text-light" type="button" data-toggle="collapse"
+              data-target="#collapseCount" aria-expanded="false" aria-controls="collapseCount">
+              2. Đếm số dương
+            </button>
+          </h2>
+        </div>
+        <div id="collapseCount" class="collapse" aria-labelledby="headingCount" data-parent="#calcCount">
+          <div class="card-body">
+            <button type="button" id="btnCount" class="btn btn-info py-2 px-3" style="border-radius: 20px;"
+              onclick="countNum()">
+              Đếm số
+            </button>
+            <br>
+            <i class="fa fa-hand-point-right text-danger pt-3" style="font-size: 25px;"></i>
+            <span class="my-3 text-danger" id="txtCount" style="font-size: 20px;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Câu 3 -->
+    <div class="accordion" id="findMin">
+      <div class="card">
+        <div class="card-header bg-dark" id="headingMin">
+          <h2 class="mb-0 ">
+            <button class="btn btn-block text-left text-light" type="button" data-toggle="collapse"
+              data-target="#collapseMin" aria-expanded="false" aria-controls="collapseMin">
+              3. Tìm số nhỏ nhất
+            </button>
+          </h2>
+        </div>
+        <div id="collapseMin" class="collapse" aria-labelledby="headingMin" data-parent="#findMin">
+          <div class="card-body">
+            <button type="button" id="btnMin" class="btn btn-info py-2 px-3" style="border-radius: 20px;"
+              onclick="findMin()">
+              Tìm số nhỏ nhất
+            </button>
+            <br>
+            <i class="fa fa-hand-point-right text-danger pt-3" style="font-size: 25px;"></i>
+            <span class="my-3 text-danger" id="txtMin" style="font-size: 20px;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Câu 4 -->
+    <div class="accordion" id="findPositiveMin">
+      <div class="card">
+        <div class="card-header bg-dark" id="headingPositiveMin">
+          <h2 class="mb-0 ">
+            <button class="btn btn-block text-left text-light" type="button" data-toggle="collapse"
+              data-target="#collapsePositiveMin" aria-expanded="false" aria-controls="collapsePositiveMin">
+              4. Tìm số dương nhỏ nhất
+            </button>
+          </h2>
+        </div>
+        <div id="collapsePositiveMin" class="collapse" aria-labelledby="headingPositiveMin"
+          data-parent="#findPositiveMin">
+          <div class="card-body">
+            <button type="button" id="btnPositiveMin" class="btn btn-info py-2 px-3" style="border-radius: 20px;"
+              onclick="findPositiveMin()">
+              Tìm số dương nhỏ nhất
+            </button>
+            <br>
+            <i class="fa fa-hand-point-right text-danger pt-3" style="font-size: 25px;"></i>
+            <span class="my-3 text-danger" id="txtPositiveMin" style="font-size: 20px;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Câu 5 -->
+    <div class="accordion" id="findEven">
+      <div class="card">
+        <div class="card-header bg-dark" id="headingEven">
+          <h2 class="mb-0 ">
+            <button class="btn btn-block text-left text-light" type="button" data-toggle="collapse"
+              data-target="#collapseEven" aria-expanded="false" aria-controls="collapseEven">
+              5. Tìm số chẵn cuối cùng
+            </button>
+          </h2>
+        </div>
+        <div id="collapseEven" class="collapse" aria-labelledby="headingEven" data-parent="#findEven">
+          <div class="card-body">
+            <button type="button" id="btnEven" class="btn btn-info py-2 px-3" style="border-radius: 20px;"
+              onclick="findEven()">
+              Tìm số chẵn
+            </button>
+            <br>
+            <i class="fa fa-hand-point-right text-danger pt-3" style="font-size: 25px;"></i>
+            <span class="my-3 text-danger" id="txtEven" style="font-size: 20px;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Câu 6 -->
+    <div class="accordion" id="swap">
+      <div class="card">
+        <div class="card-header bg-dark" id="headingSwap">
+          <h2 class="mb-0 ">
+            <button class="btn btn-block text-left text-light" type="button" data-toggle="collapse"
+              data-target="#collapseSwap" aria-expanded="false" aria-controls="collapseSwap">
+              6. Đổi chỗ
+            </button>
+          </h2>
+        </div>
+        <div id="collapseSwap" class="collapse" aria-labelledby="headingSwap" data-parent="#swap">
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <input type="number" class="form-control mr-2 py-3" id="firstIndex" placeholder="Nhập số vị trí 1"
+                  style="width: 30%; display: inline;">
+                <input type="number" class="form-control mr-2 py-3" id="secondIndex" placeholder="Nhập số vị trí 2"
+                  style="width: 30%; display: inline;">
+              </div>
+              <button type="button" id="btnSwap" class="btn btn-info py-2 px-3" style="border-radius: 20px;"
+                onclick="swap()">
+                Đổi chỗ
+              </button>
+              <br>
+              <i class="fa fa-hand-point-right text-danger pt-3" style="font-size: 25px;"></i>
+              <span class="my-3 text-danger" id="txtSwap" style="font-size: 20px;"></span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Câu 7 -->
+    <div class="accordion" id="sortIncreasing">
+      <div class="card">
+        <div class="card-header bg-dark" id="headingIncreasing">
+          <h2 class="mb-0 ">
+            <button class="btn btn-block text-left text-light" type="button" data-toggle="collapse"
+              data-target="#collapseIncreasing" aria-expanded="false" aria-controls="collapseIncreasing">
+              7. Sắp xếp tăng dần
+            </button>
+          </h2>
+        </div>
+        <div id="collapseIncreasing" class="collapse" aria-labelledby="headingIncreasing" data-parent="#sortIncreasing">
+          <div class="card-body">
+            <button type="button" id="btnIncreasing" class="btn btn-info py-2 px-3" style="border-radius: 20px;"
+              onclick="sortIncreasing()">
+              Sắp xếp
+            </button>
+            <br>
+            <i class="fa fa-hand-point-right text-danger pt-3" style="font-size: 25px;"></i>
+            <span class="my-3 text-danger" id="txtIncreasing" style="font-size: 20px;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Câu 8 -->
+    <div class="accordion" id="findPrime">
+      <div class="card">
+        <div class="card-header bg-dark" id="headingPrime">
+          <h2 class="mb-0 ">
+            <button class="btn btn-block text-left text-light" type="button" data-toggle="collapse"
+              data-target="#collapsePrime" aria-expanded="false" aria-controls="collapsePrime">
+              8. Tìm số nguyên tố đầu tiên
+            </button>
+          </h2>
+        </div>
+        <div id="collapsePrime" class="collapse" aria-labelledby="headingPrime" data-parent="#findPrime">
+          <div class="card-body">
+            <button type="button" id="btnPrime" class="btn btn-info py-2 px-3" style="border-radius: 20px;" onclick="findPrime()">
+              Tìm số nguyên tố
+            </button>
+            <br>
+            <i class="fa fa-hand-point-right text-danger pt-3" style="font-size: 25px;"></i>
+            <span class="my-3 text-danger" id="txtPrime" style="font-size: 20px;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Câu 9 -->
+    <div class="accordion" id="countInt">
+      <div class="card">
+        <div class="card-header bg-dark" id="headingInt">
+          <h2 class="mb-0 ">
+            <button class="btn btn-block text-left text-light" type="button" data-toggle="collapse"
+              data-target="#collapseInt" aria-expanded="false" aria-controls="collapseInt">
+              9. Đếm số nguyên
+            </button>
+          </h2>
+        </div>
+        <div id="collapseInt" class="collapse" aria-labelledby="headingInt" data-parent="#swap">
+          <div class="card-body">
+            <form>
+              <div class="form-group" style="display: inline;">
+                <input type="number" class="form-control mr-2 py-3" id="addInteger" placeholder="Nhập số" style="width: 30%; display: inline;">
+              </div>
+              <button type="button" id="btnAddInt" class="btn btn-info py-2 px-3" style="border-radius: 20px;" onclick="addIntegerArray()">
+                Thêm số
+              </button>
+              <br>
+              <i class="fa fa-hand-point-right text-danger pt-3" style="font-size: 25px;"></i>
+              <span class="my-3 text-danger" id="txtAddInt" style="font-size: 20px;"></span>
+            </form>
+            <button type="button" id="btnCountInt" class="btn btn-info mt-3 py-2 px-3" style="border-radius: 20px;" onclick="countInteger()">
+              Đếm số nguyên
+            </button>
+            <br>
+            <i class="fa fa-hand-point-right text-danger pt-3" style="font-size: 25px;"></i>
+            <span class="my-3 text-danger" id="txtCountInt" style="font-size: 20px;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Câu 10 -->
+    <div class="accordion" id="comparison">
+      <div class="card">
+        <div class="card-header bg-dark" id="headingComparison">
+          <h2 class="mb-0 ">
+            <button class="btn btn-block text-left text-light" type="button" data-toggle="collapse"
+              data-target="#collapseComparison" aria-expanded="false" aria-controls="collapseComparison">
+              10. So sánh số lượng âm và số lượng dương
+            </button>
+          </h2>
+        </div>
+        <div id="collapseComparison" class="collapse" aria-labelledby="headingComparison" data-parent="#comparison">
+          <div class="card-body">
+            <button type="button" id="btnComparison" class="btn btn-info py-2 px-3" style="border-radius: 20px;" onclick="comparison()">
+              So sánh
+            </button>
+            <br>
+            <i class="fa fa-hand-point-right text-danger pt-3" style="font-size: 25px;"></i>
+            <span class="my-3 text-danger" id="txtComparison" style="font-size: 20px;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/main.js"></script>
+  <!-- BOOTSTRAP -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
